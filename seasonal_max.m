@@ -50,10 +50,10 @@ function convertToSeasonalMax(inputDir, outputDir)
                 isSpring = ismember(seasonal_max.mm, [3, 4, 5]); % logical index for the months fall in the winter season
 
                 pr_sp = seasonal_max.nanmax_b(isSpring); % check the header name of the seasonal_max table.
-                sp = (max(reshape(pr_sp, 3, n)))'; % n represents the no of the years
+                sp = (max(reshape(pr_sp, 3, n)))'; % n represents the no of the years. Maximum every 3 elements which represent march, april and may
             
                 pr_su = seasonal_max.nanmax_b(isSummer);
-                su = (max(reshape(pr_su, 3, n)))';  % maximum every 3 elements which represent march, april and may
+                su = (max(reshape(pr_su, 3, n)))'; 
            
                 pr_fl = seasonal_max.nanmax_b(isFall);
                 fl = (max(reshape(pr_fl, 3, n)))';
